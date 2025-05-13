@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProdiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +23,5 @@ Route::get('/fakultas', function () {
 
     return view('fakultas.index',compact('kampus','fakultas'));
 });
+
+Route::get('/prodi',[ProdiController::class, 'index'] );
