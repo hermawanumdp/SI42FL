@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MahasiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdiController;
 /*
@@ -25,3 +26,9 @@ Route::get('/fakultas', function () {
 });
 
 Route::get('/prodi',[ProdiController::class, 'index'] );
+
+
+Route::get('/mahasiswa/insert', [MahasiswaController::class,'insert'] );
+Route::get('/mahasiswa/update', [MahasiswaController::class,'update'] );
+Route::get('/mahasiswa/delete', [MahasiswaController::class,'delete'] );
+Route::get('/mahasiswa/select', [MahasiswaController::class,'select'] );
