@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Mahasiswa;
+
 class MahasiswaController extends Controller
 {
     //
@@ -20,5 +22,23 @@ class MahasiswaController extends Controller
         // dump($result);
 
         return view('mahasiswa/index',["allmahasiswa" => $result,"kampus"=> $kampus]);
+    }
+
+    public function insertElq(){
+        $mahasiswa = new Mahasiswa();
+        $mahasiswa->npm="2327240003";
+        $mahasiswa->nama_mahasiswa="Marvin";
+        $mahasiswa->tempat_lahir="Palembang";
+        $mahasiswa->tanggal_lahir="2006-05-26";
+        $mahasiswa->alamat="Jl. Rajawali";
+        $mahasiswa->created_at=now();
+        $mahasiswa->save();
+        dump($mahasiswa);
+
+    }
+
+    public function allJoinFacade(){
+
+        
     }
 }
