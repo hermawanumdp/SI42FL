@@ -12,6 +12,11 @@
         <div class="row pt-4">
             <div class="col">
                 <h2>Form Program Studi</h2>
+                @if (session()->has('info'))
+                    <div class="alert alert-success">
+                        {{ session()->get('info')}}
+                    </div>
+                @endif
                 <form action="{{url('prodi/store')}}" method="post">
                     @csrf
                     <div class="form-group">
