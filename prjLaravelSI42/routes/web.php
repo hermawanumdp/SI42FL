@@ -50,3 +50,6 @@ Route::get('/prodi/{prodi}/edit', [ProdiController::class, 'edit'])->name('prodi
 Route::patch('/prodi/{prodi}', [ProdiController::class,'update'])->name('prodi.update');
 
 Route::delete('/prodi/{prodi}', [ProdiController::class, 'destroy'])->name('prodi.destroy');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

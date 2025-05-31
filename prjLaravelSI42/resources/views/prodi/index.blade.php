@@ -23,12 +23,16 @@
     <h2>Prodi</h2>
    <table class="table table-striped">
       <tr>
+         <th>Logo/th>  
          <th>Nama</th>  
          <th>Aksi</th>         
       </tr>
 
       @foreach ($prodis as $item)
           <tr>
+            <td>
+               <img src= "{{ asset('storage/'.$item->foto) }}"></img>
+            </td>
             <td>{{ $item->nama }}</td>
             <td>
               
