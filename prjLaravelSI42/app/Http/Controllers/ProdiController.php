@@ -17,7 +17,7 @@ class ProdiController extends Controller
     }
     public function allJoinFacade(){
          $kampus="Universitas Multi Data Palembang";
-         $result = DB::select('select mahasiswas.*,prodis.nama from prodis, mahasiswas 
+         $result = DB::select('select mahasiswas.*,prodis.nama from prodis, mahasiswas
          where prodis.id= mahasiswas.prodi_id');
 
          return view('prodi.index',["allmahasiswaprodi" => $result,"kampus"=> $kampus]);
@@ -29,6 +29,8 @@ class ProdiController extends Controller
 
     public function store(Request $request){
         // dump($request);
+        $this->authorize('create', Prodi::class);
+        
         $validateData= $request->validate([
             'nama' => 'required|min:5|max:20',
             'foto' => 'required|file|image|max:5000',
